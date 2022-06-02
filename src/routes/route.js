@@ -1,17 +1,36 @@
-const express = require('./logger');
+const express = require('express');
+
+const helper = require('../util/helper.js');
+const logger = require('../logger/logger.js');
+
+const formatter = require('../validator/formatter.js');
+
+
 
 
 const router = express.Router();
 
 router.get('/test-me', function (req, res) {
-    console.log('The constant in logger route has value'+ externalModule.welcome)
-    console.log('The current batch is'+ externalModule.welcome)
-    
-    res.send('My first ever api!')
+   
+    helper.date();
+   helper.month();
+   formatter.lower();
+   formatter.upper();
+   formatter.trim();
+   
+    res.send('Welcom')
 });
 router.get('/test-me', function (req, res){
-res.send('My first ever api!')
+res.send('this day')
 })
+
+router.get('/test-me', function (req, res){
+ res.send('this day2')
+    })
+
+    router.get('/test-me', function (req, res){
+    res.send('this day3')
+ })
 
 
 module.exports = router;
